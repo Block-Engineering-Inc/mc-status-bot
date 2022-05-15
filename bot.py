@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord_slash import SlashCommand, SlashContext
 
 import yaml
 import logging
@@ -45,7 +46,6 @@ initial_extensions = [
 def get_prefix(bot, message):
     prefixes = [bot.config["prefix"]]
     return commands.when_mentioned_or(*prefixes)(bot, message)
-
 
 description = """
 A simple Discord bot that displays the status and player count of a Minecraft server in the sidebar.
@@ -202,4 +202,5 @@ class ServerStatus(commands.Bot):
 
 if __name__ == "__main__":
     bot = ServerStatus()
+    slash = SlashCommand(bot)
     bot.run()
