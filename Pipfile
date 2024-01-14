@@ -4,9 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-"discord.py" = ">=1.5.0"
-mcstatus = ">=5.1.0"
+"discord.py" = ">=1.5.0,<1.6"
+mcstatus = "<6,>=5.1.0"
 PyYAML = "*"
+discord-py-slash-command = "==1.1.2"
 
 [dev-packages]
 discord-py-slash-command = "*"
